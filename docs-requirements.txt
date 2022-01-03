@@ -38,7 +38,7 @@ pyparsing==2.4.7
     # via packaging
 pytz==2021.1
     # via babel
-requests==2.26.0
+requests==2.27.0
     # via sphinx
 six==1.16.0
     # via cryptography
