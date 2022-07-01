@@ -22,7 +22,7 @@ idna==2.10
     # via
     #   -r docs-requirements.in
     #   requests
-imagesize==1.2.0
+imagesize==1.4.1
     # via sphinx
 jinja2==3.0.1
     # via sphinx
