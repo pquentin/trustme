@@ -42,7 +42,7 @@ requests==2.26.0
     # via sphinx
 six==1.16.0
     # via cryptography
-snowballstemmer==2.1.0
+snowballstemmer==2.2.0
     # via sphinx
 sphinx==4.1.2
     # via sphinxcontrib-trio
