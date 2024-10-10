@@ -1,6 +1,0 @@
-pytest>=6.2
-coverage[toml]
-PyOpenSSL
-service-identity
-cryptography
-idna

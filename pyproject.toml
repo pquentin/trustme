@@ -35,6 +35,25 @@ dependencies = [
     "idna>=2.0",
 ]
 
+[project.optional-dependencies]
+test = [
+  "pytest",
+  "coverage[toml]",
+  "PyOpenSSL",
+  "service-identity",
+]
+doc = [
+  "sphinxcontrib_trio",
+]
+lint = [
+  "mypy",
+  "types-pyopenssl",
+  "pytest",
+  "black",
+  "isort",
+  "nox",
+]
+
 [project.urls]
 Homepage = "https://github.com/python-trio/trustme"
 

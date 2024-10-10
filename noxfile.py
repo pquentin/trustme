@@ -2,10 +2,17 @@ import os
 
 import nox
 
+nox.options.default_venv_backend = "uv"
+
 
 @nox.session()
 def lint(session: nox.Session) -> None:
-    session.install("-r", "lint-requirements.txt")
+    session.run_install(
+        "uv",
+        "sync",
+        "--extra=lint",
+        env={"UV_PROJECT_ENVIRONMENT": session.virtualenv.location},
+    )
     LINT_PATHS = ("src/trustme", "tests", "noxfile.py")
     session.run("black", *LINT_PATHS)
     session.run("isort", "--profile", "black", *LINT_PATHS)
@@ -14,7 +21,12 @@ def lint(session: nox.Session) -> None:
 
 @nox.session(python=["3.9", "3.10", "3.11", "3.12", "3.13", "pypy3.10"])
 def test(session: nox.Session) -> None:
-    session.install(".", "-r", "test-requirements.txt")
+    session.run_install(
+        "uv",
+        "sync",
+        "--extra=test",
+        env={"UV_PROJECT_ENVIRONMENT": session.virtualenv.location},
+    )
     session.run(
         "coverage",
         "run",
