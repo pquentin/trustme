@@ -11,7 +11,7 @@ works. It demonstrates a simple TLS server and client that connect to
 each other using :mod:`trustme`\-generated certs.
 
 This example requires `Trio <https://trio.readthedocs.io>`__ (``pip
-install -upgrade trio``) and Python 3.10+. Note that while :mod:`trustme` is
+install --upgrade trio``) and Python 3.10+. Note that while :mod:`trustme` is
 maintained by the Trio project, :mod:`trustme` is happy to work with
 any networking library.
 
@@ -121,6 +121,23 @@ Change history
 ==============
 
 .. towncrier release notes start
+
+Trustme 1.3.0 (2026-08-05)
+--------------------------
+
+Features
+~~~~~~~~
+
+- Add a ``trustme`` console script entry point, so that trustme can be run
+  without ``python -m``, for example with ``uvx trustme``. (`#681 <https://github.com/python-trio/trustme/issues/681>`__)
+- Add support for Python 3.14, including the free-threaded build. (`#690 <https://github.com/python-trio/trustme/issues/690>`__)
+
+
+Deprecations and Removals
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Remove support for Python 3.9. (`#690 <https://github.com/python-trio/trustme/issues/690>`__)
+
 
 Trustme 1.2.1 (2025-01-02)
 --------------------------
